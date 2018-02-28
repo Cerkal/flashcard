@@ -1,0 +1,190 @@
+	body {
+		background-color:#ddd;
+        margin:10px;
+        margin-top:150px;
+	}
+
+	html {
+		overflow-x:hidden;
+	}
+    * {
+      box-sizing: border-box;
+      border:none;
+      outline:none;
+      font-family: 'Helvetica';
+    }
+    .slider {
+        width: 100%;
+        margin: 0 auto;
+        max-height: 450px;
+        overflow:hidden;
+    }
+    .owl-carousel {
+    display:block !important;
+    cursor:pointer !important;
+       }
+
+    .slick-slide {
+      margin: 0px 50px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+    .slick-slide {
+      transition: all ease-in-out .3s;   
+    }
+	.bar {
+        position:absolute;
+        width:100%;
+        bottom:0px;
+		padding:20px 0;
+        margin-bottom: 10px;
+	}
+    .bar span {
+        float:right;
+        margin:0 20px;
+        padding-right:10px;
+    }
+	.mobile_nav {
+		position:absolute;
+		top:0px;
+		background-color: #000;
+		opacity: .5;
+		z-index: 99999999;
+		width:100%;
+        margin-bottom: 0px;
+        color:#ccc;
+        padding:10px 0;
+	}
+    .owl-stage-outer {
+        height:420px;
+    }
+	.bar a {
+		cursor: pointer;
+		-webkit-user-select: none;  /* Chrome all / Safari all */
+	  	-moz-user-select: none;     /* Firefox all */
+	  	-ms-user-select: none;      /* IE 10+ */
+	  	user-select: none;          /* Likely future */  
+        border: 1px solid #c9c9c9;
+        padding: 20px 50px;
+        border-radius: 10px;
+        margin-right:5px;
+        color:black;
+	}
+    a, a:visited, a:hover {
+        color:black;
+        text-decoration: none;
+    }
+    a:active {
+        background-color:#eee;
+        border-color:#ccc;
+    }
+	.grayed,.grayed:hover {
+		color:#999;
+		text-decoration: none;
+		cursor: default;
+        background-color:#ddd !important;
+	}
+        .carousel-linked-nav,
+        .item {
+            height:100%;
+            margin:0 auto;
+            display:block;
+        }
+
+        .myCarousel {
+            display:block;
+            margin:0 auto;
+            width: 100%;
+            height:auto;
+            overflow:hidden;
+            cursor: pointer;
+        }
+        .magic {
+            color:#ccc;
+            height:700px !important;
+        }
+
+        .carousel-inner {
+            /*color:#fff;*/
+            height:500px;
+            margin-top:100px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .sectionPad {
+            padding:0px !important;
+        }
+        #left-arrow {
+            position: absolute;
+            left: 15px;
+            height: 30px;
+            top: 44%;
+        }
+        #right-arrow {
+            position: absolute;
+            right: 15px;
+            height: 30px;
+            top: 44%;
+        }
+        #left-arrow img, #right-arrow img {
+            width:100%;
+            height:100%;   
+        }
+        .colorize {
+        	color:red !important;
+        }
+        
+	     .card {
+	     	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	     	width:100%;
+	     	max-width: 800px;
+	     	height:400px;
+	     	font-size:70pt;
+            padding:20px 40px;
+	     	font-weight: bold;
+	     	margin:0 auto;
+	     	text-align: center;
+	     	display: table;
+	     	background-color:#fff;
+	     	overflow: hidden;
+	     	box-shadow:5px 5px 5px #999;
+	     	border-radius: 5px;
+	  
+	     }
+	     .card span {
+			vertical-align: middle;
+			display: table-cell;
+            line-height: 1.2;
+	     }
+	     .card span b {
+	     	color:red;
+	     }
+	     .carousel {
+            margin-top:30px;
+        }
+        #block_land{
+        	padding-top: 100px;
+        	position:absolute; 
+        	top:0; 
+        	left:0; 
+        	text-align:center; 
+        	background:white; 
+        	width:100%; 
+            z-index: 9999999999;
+        	height:100%; 
+        	display:none;
+        }
+        @media (max-width:768px) { 
+            .card {
+            	font-size:40pt;
+            }
+
+        }

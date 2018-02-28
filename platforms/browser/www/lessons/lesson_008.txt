@@ -1,0 +1,20 @@
+Lesson 8
+B
+B<b>a</b>g
+b<b>a</b>d
+b<b>i</b>t
+j<b>o</b>b
+c<b>o</b>b
+b<b>o</b>g
+b<b>a</b>t
+b<b>u</b>d
+b<b>u</b>t
+p<b>u</b>b
+<u>a</u> b<b>i</b>g b<b>a</b>g
+j<b>a</b>b B<b>o</b>b
+b<b>i</b>t <u>a</u> b<b>u</b>g
+<u>a</u> b<b>a</b>d j<b>o</b>b
+L<b>i</b>b g<b>o</b>t <u>a</u> j<b>o</b>b.
+B<b>o</b>b l<b>i</b>t <u>the</u> l<b>o</b>g.
+<u>The</u> b<b>a</b>g <b>i</b>s b<b>i</b>g.
+T<b>a</b>b g<b>o</b>t <u>the</u> c<b>a</b>b.

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--meta-->    
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!--scripts-->
+    <script src="assets/vendors/jquery.min.js"></script>
+    <script src="assets/owlcarousel/owl.carousel.js"></script>    
+    <script src="./strap/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="canvas.js"></script>
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="./strap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="./slick/custom.css">
+
+<style type="text/css">
+    body {
+        /*background-image: url('./img/loader.gif');*/
+        background-image: url('./img/loader.png');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 270px;
+    }
+</style>
+</head>
+
+<body>
+<div id="loaderImage"></div>
+<div class="bar">
+    <a href="index.html">Index</a>
+    <a id="prev">Prev</a>
+    <a id="next">Next</a>
+    <span id="lesson_name"></span>
+</div>
+
+<div style="padding:0px; width:100%">
+    <div id="banner-slider-demo-1" class="owl-carousel owl-middle-narrow owl-banner-carousel">
+        <section class="lazy slider" id="content">
+
+        </section>
+    </div>
+</div>
+
+
+<script>
+    var lesson_count = 40;
+    
+    url= window.location.href;
+    url = url.split('?')[1];
+    lesson = url.split('=');
+    lesson_curr = parseInt(lesson[1]);
+
+    if (lesson[0] !== 'lesson') {
+        alert('error - invalid lesson');
+        window.location.href = '/';
+    }
+
+    dir = 'lessons/';
+    file = dir + 'lesson_' + lesson[1] + '.txt';
+    
+    $.get(file, function(data) {
+        words = data.split('\n');
+        
+        words.forEach(function(word) {
+            size = font_size(word);
+            string = '<div class="item"><div class="card" style="font-size:' + size + '" ><span>' + word + '</span></div></div>';
+            $('#content').append(string);
+        });
+    })
+    .done(function() {
+
+        load_swipe();
+
+    });
+
+
+    function font_size(word) {
+        size = word.replace(/(<([^>]+)>)/ig,"");
+        size = size.length;
+        font = 70;
+
+        if (size > 15 && size < 100) {
+            font = font - ((size / 5)*2);
+        }
+        if (size > 99) {
+            font = 30;
+        }
+        font = font + 'pt';
+        return font;
+    }
+
+    function load_swipe() {
+
+        $(".lazy").owlCarousel({
+            items: 1,
+            autoplay: false,
+            touchDrag: true,
+            mouseDrag: true,
+            smartSpeed: 500,
+            dots:false,
+            nav: false,
+            navRewind: true,
+            loop: true,
+        });
+
+        load_nav();
+    }
+
+    function load_nav() {
+
+        lesson_title = "Lesson " + lesson_curr;
+        $('.bar span').text(lesson_title);
+
+        if (lesson_curr == lesson_count) {
+            $('#next').addClass('grayed');
+            $('#next').removeAttr("href");
+        } else {
+            next = lesson_curr;
+            next = next+=1;
+            $('#next').prop("href", '?lesson='+leading_zeros(next));
+        }
+
+        if (lesson_curr == 1) {
+            $('#prev').addClass('grayed');
+            $('#prev').removeAttr("href");
+        } else {
+            prev = lesson_curr;
+            prev = prev-=1;
+            $('#prev').prop("href", '?lesson='+leading_zeros(prev));
+        }
+
+        $('body').css('background-image','none');
+        
+    }
+    
+    function leading_zeros(num) {
+        num = num.toString();
+        if (num.length === 1) {
+            num = '00' + num;
+        } else if (num.length === 2) {
+            num = '0' + num;
+        } else if (num.length === 3) {
+            num = num;
+        } else {
+            num = '001';
+        }
+        return num;
+    }
+
+    
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
